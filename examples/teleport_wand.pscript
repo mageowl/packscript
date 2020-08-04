@@ -1,0 +1,30 @@
+pack {
+	name: Teleport Wand
+	description: Testing for PackScript
+	path: /Users/owen/Library/Application Support/minecraft/saves/PackScript Testing/datapacks
+	path: ./examples
+}
+
+namespace tele_wand {
+	on mc:load load {
+		trigger rightClick: minecraft.used:minecraft.carrot_on_a_stick
+	}
+
+	on mc:tick detect {
+		asat(@a[scores={?rightClick}, nbt={SelectedItem:{tag:{wand:1b}}}]) {
+			cast tp_ray
+		}
+	}
+
+	function give_wand {
+		/give @p minecraft:carrot_on_a_stick{display:{Name:'{"text":"Wand"}'},wand:1b} 1
+	}
+
+	raycast tp_ray {
+		/particle dust 0.788 0.102 0.769 1 ~ ~ ~ 0 0 0 1 0 normal
+	}
+
+	on ray_hit:tp_ray ray_hit {
+		/tp ~ ~ ~
+	}
+}

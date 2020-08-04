@@ -1,0 +1,32 @@
+{
+  "name": "packscript",
+  "version": "1.0.0",
+  "description": "Compiler for Minecraft datapacks",
+  "main": "index.js",
+  "type": "module",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seattleowl/packscript.git"
+  },
+  "keywords": [
+    "minecraft",
+    "language"
+  ],
+  "author": "OwL",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seattleowl/packscript/issues"
+  },
+  "homepage": "https://github.com/seattleowl/packscript#readme",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "fs-extra": "^9.0.1",
+    "path": "^0.12.7"
+  }
+}
